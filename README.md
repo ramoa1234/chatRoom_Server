@@ -1,7 +1,10 @@
 # chatRoom_Server
+TODO
+need to set up nodemon on new device
+connect sql database and finish configuring it
+  able to make new things from app in sql database?
+  feature to be able to tell who is logged
+websocket
+finish stlying the cite
 
-need learn websocket
-systems design for storing data and looking at data
-backend that updates the chat in real time
-user login and passwords that can be stored and saved
-need to make a basic front end  
+
