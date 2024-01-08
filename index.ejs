@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Chat Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class = header>
+        <button id = login>login</button>
+        <script>
+            document.getElementById('login').addEventListener("click", function(){
+                window.location.href = "/login"
+            });
+        </script>
+        <button id = register>register</button>
+        <script>
+            document.getElementById('register').addEventListener("click", function(){
+                window.location.href = "/register"
+            });
+        </script>
+        <h1 class = title> ChatRoom</h1>
+    </div>
+    <div class = chat>
+        
+    </div>
+    <input type="text" class = "message" placeholder="Type your message here">
+
+</body>
+</html>
