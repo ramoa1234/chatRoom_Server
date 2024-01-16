@@ -1,1 +1,16 @@
+TODO
 
+style websocket
+
+finish gathering user data
+    learn mysql
+    finish making login
+    make feature to display username
+    login as guest
+    
+learn password hashing
+
+login(passport js)
+    setup file to config the passport
+
+    
