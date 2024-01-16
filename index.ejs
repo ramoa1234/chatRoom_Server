@@ -2,29 +2,36 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>My Chat Room</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ChatRoom</title>
+    <script src ="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
 </head>
 <body>
-    <div class = header>
-        <button id = login>login</button>
-        <script>
-            document.getElementById('login').addEventListener("click", function(){
-                window.location.href = "/login"
-            });
-        </script>
-        <button id = register>register</button>
-        <script>
-            document.getElementById('register').addEventListener("click", function(){
-                window.location.href = "/register"
-            });
-        </script>
-        <h1 class = title> ChatRoom</h1>
-    </div>
-    <div class = chat>
+    <h1>ChatRoom</h1>
+
+    <input type="text" class ="message">
+    <button onclick="sendMessage()">Send Message</button>
+    <div class ="messageContainer">
         
     </div>
-    <input type="text" class = "message" placeholder="Type your message here">
+    <script>
+        const socket = io('http://localhost:3000')
+        socket.on("message", (data) => {
+            appendMessage(data);
+        });
+
+        const sendMessage = () => {
+            const userInput = document.querySelector('.message').value;
+            socket.emit("message", userInput);
+            appendMessage(userInput);
+        }
+
+        const appendMessage = (message) => {
+            const messageElement = document.createElement('h1');
+            messageElement.textContent = message;
+            document.querySelector('.messageContainer').appendChild(messageElement);
+        }
+    </script>
+
 
 </body>
 </html>
