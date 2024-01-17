@@ -5,6 +5,12 @@ const io = require('socket.io')(server);
 const path = require('path');
 const port = 3000;
 
+const intializePassport = require('./passport-config');
+intializePassport(
+    passport,
+    email => users.find(user => user.email === email)
+)
+
 const users = [];
 
 app.set('view engine', 'ejs');
