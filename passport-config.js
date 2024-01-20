@@ -6,11 +6,6 @@ function initialize(passport, getUserByEmail) {
         if (user == null) {
             return done(null, false, { message: 'No user found' });
         } else {
-            // Validate the password here
-            // You can use a library like bcrypt to compare the hashed password
-            // with the provided password
-
-            // For example:
             if (user.password === password) {
                 return done(null, user);
             } else {
@@ -21,20 +16,8 @@ function initialize(passport, getUserByEmail) {
 
     passport.use(new localStrategy({ usernameField: 'email' }, authenticateUser));
     passport.serializeUser((user, done) => done(null, user.id));
-    passport.deserializeUser((id, done) => {
-        // Fetch the user from the database using the id
-        // For example:
-        const user = getUserById(id);
-        done(null, user);
-    });
+    passport.deserializeUser((id, done) => {    
+        return done(null, getUserById(id))  
+    })
 }
-    const user = authenticateUser = (email, password, done) => {
-        const user = getUserByEmail(email)
-        if(user == null) {
-            return done(null, false, { message: 'No user found'})
-        }
-    else {
-
-        }
-    }
-        
+module.exports = initialize;
