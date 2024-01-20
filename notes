@@ -10,7 +10,29 @@ finish gathering user data
     
 learn password hashing
 
-login(passport js)
-    setup file to config the passport
 
-    
+MAIN
+
+flash message
+send messages to user for errors or incorrect login attempt 
+    -on succesful login attempt need to user flash redirect to main
+    -on fail attempt need to redirect to /login
+
+session
+
+
+
+PASSPORT CONFIG
+intiailize passport 
+    than setup callback function for username and password
+    they are already premade just need to be intialized with the correct variables
+
+in main make the intialize passport variable
+but only make just passport 
+    and create the variables to use fo it
+than call it in other file and make intiialize
+    and set up all the logic for the password
+
+than serilalize the user
+    make there cookies/token for logging in
+and deserliaze to handle logging out
